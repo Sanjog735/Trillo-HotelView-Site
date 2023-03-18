@@ -1,0 +1,96 @@
+.container {
+  max-width: 120rem;
+  // if the screen width is less than 1200px then it will occcupy the 100% device width
+  margin: 8rem auto;
+  background: var(--color-grey-light-2);
+  box-shadow: var(--shadow-dark);
+
+  min-height: 50rem;
+
+  @media only screen and (max-width: $bp-large) {
+    //below 1200
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+}
+.header {
+  font-size: 1.4rem;
+  height: 7rem;
+  background: #fff;
+  border-bottom: var(--border-bottom);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media only screen and (max-width: $bp-small-small) {
+    //below 500
+    flex-wrap: wrap; // Allow search bar to the next line
+    height: 12rem;
+    align-content: space-around; //LEC
+  }
+}
+.content {
+  display: flex;
+
+  @media only screen and (max-width: $bp-mid) {
+    //below 900
+    flex-direction: column;
+  }
+}
+.sidebar {
+  background: var(--color-grey-dark-1);
+  flex: 0 0 18%; // flex-grow flex-shrink flex-basis (we don't want element to grow if there some space we also don't want to shrink if there not enough space but we alwats wanted to keep at 18% )
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.hotel-view {
+  background: #fff;
+  flex: 1; // flex grow 1 (by using flex:1 we say is that the element should growas much as it can. so over all the avalible space that it has)
+}
+
+.details {
+  display: flex;
+  padding: 4.5rem;
+  background-color: var(--color-grey-light-1);
+  border-bottom: var(--border-bottom);
+  font-size: 1.4rem;
+
+  @media only screen and (max-width: $bp-mid) {
+    //below 900
+    padding: 3rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    //below 600
+    flex-direction: column;
+  }
+}
+.description {
+  font-size: 1.4rem;
+  background: #fff;
+  flex: 0 0 60%;
+  margin-right: 4.5rem;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+  padding: 3rem;
+
+  @media only screen and (max-width: $bp-mid) {
+    //below 900
+    padding: 2rem;
+  }
+  @media only screen and (max-width: $bp-small) {
+    //below 600
+    margin-right: 0;
+    margin-bottom: 4.5rem;
+  }
+}
+.user-reviews {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

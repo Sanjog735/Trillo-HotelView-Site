@@ -1,0 +1,82 @@
+/*
+COLORS
+
+Primary: #eb2f64
+Primary light: #FF3366
+Primary dark: #BA265D
+
+Grey light 1: #faf9f9
+Grey light 2: #f4f2f2
+Grey light 3: #f0eeee
+Grey light 4: #ccc
+
+Grey dark 1: #333
+Grey dark 2: #777
+Grey dark 3: #999
+
+CSS Custom Properties/CSS Variables => We use this instead SASS Variables
+Why we need ? 
+1> In css variables you don't ever need a pre-processer so if you are just using SASS for the variables then you wouldn't need it anymore because css now natively handle css variables
+2 > They can be manipulated in JS and also we can add them in our dev tools also css variables can be use in calc() and they are inherited.
+
+The custom properties they have to be define within a declairation block.Now we could put these variables just in any normal selector that we want, but then this variable would only be avalible in that element and it's children . So we have to put all css variables in the root pseudo class :root ( so that it can be accessiable to all the element ) and it is same as html selector but it has higher specificity 
+
+ */
+
+:root {
+  --color-primary: #eb2f64;
+  --color-primary-light: #ff3366;
+  --color-primary-dark: #ba265d;
+
+  --color-grey-light-1: #faf9f9;
+  --color-grey-light-2: #f4f2f2;
+  --color-grey-light-3: #f0eeee;
+  --color-grey-light-4: #ccc;
+
+  --color-grey-dark-1: #333;
+  --color-grey-dark-2: #777;
+  --color-grey-dark-3: #999;
+
+  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+
+  --border-bottom: 2px solid var(--color-grey-light-2);
+}
+
+$bp-large: 75rem; //1200
+$bp-large-small: 68.75rem; //1100
+$bp-mid: 56.25rem; //900
+$bp-mid: 56.25rem; //900
+$bp-small: 37.5rem; //600
+$bp-small-small: 31.25rem; //500
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+
+  @media only screen and (max-width: $bp-large-small) {
+    //below 1100
+    font-size: 50%;
+  }
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  background-image: linear-gradient(
+    to right bottom,
+    var(--color-primary-light),
+    var(--color-primary-dark)
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  color: var(--color-grey-dark-2);
+}
